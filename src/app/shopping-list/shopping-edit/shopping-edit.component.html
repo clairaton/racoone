@@ -1,0 +1,3 @@
+<input id="add-elem" type="text" class="col-xs-offset-1 col-xs-5"[(ngModel)]="shopElement" (focus)="shopElement=''">
+<input id="elem-qty" type="text" class="col-xs-2 col-xs-offset-1"[(ngModel)]="shopElementQty" (focus)="shopElementQty=''">
+<button class="btn btn-info" (click)="onAddElement()" [disabled]="!shopElement">Add</button>

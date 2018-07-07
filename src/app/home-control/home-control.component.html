@@ -1,0 +1,54 @@
+
+	<h3>Home Control</h3>
+	<hr>	
+		<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-offset-0 col-md-3 ctrl-tab">
+			<h4><span class="glyphicon glyphicon-lamp"></span>Lights</h4>
+				<table  class="table elem-table">
+					<tr class="row">
+						<td class="col-xs-1"><span class="glyphicon glyphicon-chevron-right"></span></td>
+						<td class="col-xs-8 local">Hall : </td>
+						<td class="col-xs-3" (click)="changingLightStatus('hall')"><button class="btn over" [ngClass]="{on:domos.lights.hall.status==='On',off:domos.lights.hall.status==='Off'}">{{domos.lights.hall.status}}</button></td>
+					</tr>
+					<tr class="row">
+						<td class="col-xs-1"><span class="glyphicon glyphicon-chevron-right"></span></td>
+						<td class="col-xs-8 local">Living Room : </td>
+						<td class="col-xs-3" (click)="changingLightStatus('living')"><button class="btn over" [ngClass]="{on:domos.lights.living.status==='On',off:domos.lights.living.status==='Off'}">{{domos.lights.living.status}}</button></td>
+					</tr>
+					<tr class="row">
+						<td class="col-xs-1"><span class="glyphicon glyphicon-chevron-right"></span></td>
+						<td class="col-xs-8  local">Kitchen : </td>
+						<td class="col-xs-3" (click)="changingLightStatus('kitchen')"><button class="btn over" [ngClass]="{on:domos.lights.kitchen.status==='On',off:domos.lights.kitchen.status==='Off'}">{{domos.lights.kitchen.status}}</button></td>
+					</tr>
+					
+				</table>
+		</div>
+		<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-1 ctrl-tab">
+			<h4><span class="glyphicon glyphicon-fire"></span>Temperature</h4>
+			<table  class="table elem-table">
+				<tr class="row">
+					<td class="col-xs-1"><span class="glyphicon glyphicon-chevron-right"></span></td>
+					<td class="col-xs-7 local">General : </td>
+					<td class="col-xs-1 change clickable" (click)="onPlusClicking($event)"><span class="glyphicon glyphicon-plus  clickable"></span></td>
+					<td class="col-xs-1 temp" ><input
+			type="text"  class="temp-value"
+			[(ngModel)]="domos.temperature.all.value"><span>°C</span></td>
+					<td class="col-xs-1 change" (click)="onMinusClicking($event)"><span class="glyphicon glyphicon-minus clickable"></span></td>
+				</tr>
+			</table>
+		</div>	
+		<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-1 ctrl-tab">
+			<h4><span class="glyphicon glyphicon-modal-window"></span>Opening</h4>
+			<table  class="table elem-table">
+				<tr class="row">
+					<td class="col-xs-1"><span class="glyphicon glyphicon-chevron-right"></span></td>
+					<td class="col-xs-8  local">Door : </td>
+					<td class="col-xs-3"><button class="btn"  [ngClass]="{on:domos.opening.door.status===true,off:domos.opening.door.status===false}" [disabled]=true>{{domos.opening.door.status}}</button></td>
+				</tr>
+				<tr class="row">
+					<td class="col-xs-1"><span class="glyphicon glyphicon-chevron-right"></span></td>
+					<td class="col-xs-8 local">Garden : </td>
+					<td class="col-xs-3"><button class="btn" [ngClass]="{on:domos.opening.garden.status===true,off:domos.opening.garden.status===false}" [disabled]=true>{{domos.opening.garden.status}}</button></td>
+				</tr>
+			</table>		
+		</div>	
+

@@ -1,0 +1,19 @@
+<!--
+<div class="row">
+	<div class="col-xs-12">
+		<button class="btn btn-info">New Recipe</button>
+	</div>
+</div>
+-->
+<div class="row">
+	<div class="col-xs-12">
+		<app-recipe-item *ngFor="let rec of recipes" 
+		[rec]="rec"
+		(recipeSelected)="onRecipeSelected(rec)">{{rec.name}}</app-recipe-item>
+		
+		<!--
+		<button class="btn btn-danger" (click)="getItem('/recipes')">Debugg!</button>
+	-->
+	</div>
+</div>
+

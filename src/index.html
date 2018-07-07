@@ -4,11 +4,24 @@
   <meta charset="utf-8">
   <title>ShopList</title>
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <!-- Adding Fire Base to the Project -->
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></  script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAbo89nnII7DH-IbsRS779TDSJkv6YVP8E",
+      authDomain: "racoon-e-assist.firebaseapp.com",
+      databaseURL: "https://racoon-e-assist.firebaseio.com",
+      projectId: "racoon-e-assist",
+      storageBucket: "",
+      messagingSenderId: "693498834395"
+    };
+    firebase.initializeApp(config);
+  </script>
   <app-root></app-root>
 </body>
 </html>

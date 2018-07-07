@@ -1,0 +1,22 @@
+<h3>Shopping List</h3>
+<!--
+<input id="add-elem" type="text" class="col-xs-offset-1 col-xs-5"[(ngModel)]="shopElement" (focus)="shopElement=''">
+<input id="elem-qty" type="text" class="col-xs-2 col-xs-offset-1"[(ngModel)]="shopElementQty" (focus)="shopElementQty=''">
+-->
+<app-shopping-edit [shopElement]="shopElement" [shopElementQty]="shopElementQty" (ingredientAdded)="onAddingElement($event)"></app-shopping-edit>
+
+<table class="table table-hover elem-table">
+	<tr *ngFor="let el of ingredients;let i =index" class="row">
+		<td class="col-xs-1"><span class="glyphicon glyphicon-chevron-right"></span></td>
+		<td class="col-xs-7 elem-name">{{el.name}}</td>
+		<td class="col-xs-2 elem-qty">{{el.amount}}</td>
+		<!--
+		<td class="col-xs-1"><span class="glyphicon glyphicon-pencil clickable" (click)="onChangeElement($event)"></span></td>
+	-->
+		<td class="col-xs-1"><span class="glyphicon glyphicon-remove clickable" (click)="onDeleteElement($event)"></span></td>
+	</tr>
+</table>
+<button class="btn btn-warning" (click)="clearList()">Clear Shopping List</button>
+
+
+

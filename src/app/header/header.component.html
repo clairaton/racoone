@@ -1,0 +1,35 @@
+<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="row">
+          <div class="navbar-header col-xs-12 col-sm-5 col-sm-offset-1 col-md-offset-0 col-md-3">          
+            <a class="navbar-brand" routerLink="/">
+  	          	<img src="./assets/img/racoone3.png" width="80" alt="racoonee">
+  	          	<div >Racoon-E | Assist</div>
+            </a>
+            <div class="nav-item dropdown">           
+              <h4 type="button" class="navbar-toggle hidden-sm nav-button">
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+                <span class="burger-menu">Menu</span>
+              </h4>
+            </div>
+          </div>
+              <ul class="displayed-menu" aria-labelledby="navbarDropdown">
+                <li class="dropdown-item" *ngFor="let item of items; let i=index" [ngClass]="{active:item.name===selection}"><a (click)="menuSelection($event)" routerLink={{item.route}}>{{item.name}}</a></li>
+              </ul>
+            <h1 class="hidden-xs pull-right">Racoon-E</h1>
+        </div>
+        <div class="container-fluid">
+
+          <div class="navbar-collapse collapse"  role="navigation">
+            <ul class="nav nav-tabs navbar-right">
+              <!--<a href="#" class="dropdown-toggle" role="button"><span class="glyphicon glyphicon-menu-hamburger clickable"></span></a>-->
+              <li *ngFor="let item of items; let i=index" [ngClass]="{active:item.name===selection}" (click)="menuSelection($event)">
+                <a routerLink={{item.route}}>{{item.name}}</a>     
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </div>

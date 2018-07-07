@@ -1,0 +1,46 @@
+<div class="row">
+	<!--
+	<div class="col-xs-12 col-sm-6 pull-right">
+		<div
+	      class="btn-group"
+	      appDropdown>
+	      <button
+	        type="button"
+	        class="btn btn-info dropdown-toggle">
+	        Manage Recipe <span class="caret"></span>
+	      </button>
+	      <ul class="dropdown-menu">
+	        <li><a href="#">To Shopping List</a></li>
+	        <li><a href="#">Edit Recipe</a></li>
+	        <li><a href="#">Delete Recipe</a></li>
+	      </ul>
+	    </div>
+	</div>
+	-->
+	<div class="col-xs-12 col-sm-6">
+		<h3>{{recipe.title}}</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-sm-6">
+		<img src="{{recipe.imagePath}}" alt="" class="img-responsive">
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<div class="row">
+			<div class="col-xs-12">
+				{{recipe.description}}
+			</div>
+		</div>
+		<div class="row">
+			<table class="col-xs-12 table table-hover elem-table">
+				<h4>Ingredients</h4>
+				<tr *ngFor="let ing of recipe.ingredients">
+					<td class="col-xs-8 elem-name">{{ing.name}}</td>
+					<td class="col-xs-3">{{ing.amount}}</td>
+					<td class="col-xs-1" (click)="addIngredientToShopList(ing)"><span class="glyphicon glyphicon-plus clickable"></span></td>
+				</tr>
+			<button class="btn btn-info" (click)="addAll(recipe.ingredients)">Add All Ingredients</button>
+			</table>
+		</div>
+	</div>
+</div>
